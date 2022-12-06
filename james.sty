@@ -1,0 +1,206 @@
+\usepackage{amsmath,amssymb}
+%\usepackage{mathabx}
+\usepackage[margin=1in]{geometry}
+%\usepackage{titlesec}
+\usepackage{amsthm}
+%\usepackage{tikz-cd}
+%\usepackage{mathrsfs}
+\usepackage{mathtools}
+%\usepackage{todonotes}
+%\usepackage{calc}
+%\usepackage{blindtext}
+%\usepackage{algorithmicx}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{enumerate}
+%\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{siunitx}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=red,
+  urlcolor=blue,
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem Counter
+
+\newcounter{problem}[section]
+\newenvironment{problem}[1][]{\refstepcounter{problem}\par\medskip
+  \noindent \textbf{Problem~\theproblem. #1} \rmfamily}{\medskip}
+
+% Exercises
+\newcommand{\exerc}[1]{\bigskip \noindent \underline{\textbf{Exercise #1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorem Styles
+
+\theoremstyle{plain}
+%\newtheorem{theorem}{Theorem}[problem]
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{lemma*}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{question}{Question}[section]
+\newtheorem*{question*}{Question}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem*{claim}{Claim}
+\newtheorem*{remark}{Remark}
+\newtheorem*{note}{Note}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{notation*}{Nt}
+
+\renewcommand*{\proofname}{Proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% mathbb
+
+\newcommand{\N}{\mathbb{N}} % natural numbers
+\newcommand{\Z}{\mathbb{Z}} % integers
+\newcommand{\R}{\mathbb{R}} % real numbers
+\newcommand{\Q}{\mathbb{Q}} % rational numbers
+\newcommand{\C}{\mathbb{C}} % complex numbers
+\newcommand{\E}{\mathbb{E}} % expected value
+\newcommand{\F}{\mathbb{F}} % field
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Math operators
+
+\DeclareMathOperator{\im}{im} % image
+\DeclareMathOperator{\tr}{tr} % trace
+\DeclareMathOperator{\id}{id} % identity map (lowercase)
+\DeclareMathOperator{\Id}{Id} % identity map/matrix
+\DeclareMathOperator{\rank}{rank} % rank
+\DeclareMathOperator{\rk}{rk} % rank (4330)
+\DeclareMathOperator{\rs}{rs}  % row space (4330)
+\DeclareMathOperator{\cs}{cs}  % column space (4330)
+\DeclareMathOperator{\spn}{span}  % command \span already exists
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% blu-bird & James
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\vphi}{\varphi}
+\newcommand{\extd}{\mathbf{d}}  % 2240
+\newcommand{\ind}[1]{\mathbf{1}_{#1}}  % 2240
+\newcommand{\dpav}[1]{\mathcal{D}_{#1}}  % 2240
+\newcommand{\dvol}[2]{|d^{#1}\mathbf{#2}|}  % 2240
+\newcommand{\lbar}[1]{\overline{#1}}  % stands for "long bar"
+
+% Vectors
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfz}{\mathbf{z}}
+\newcommand{\bfu}{\mathbf{u}}
+
+\newcommand{\ve}{\vec{e}}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\vw}{\vec{w}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vy}{\vec{y}}
+\newcommand{\vz}{\vec{z}}
+
+% Matrices
+\newcommand{\bmat}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\newcommand{\pmat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
+\newcommand{\xypoint}[2]{\pmat{ #1 \\ #2 }}
+\newcommand{\xyzpoint}[3]{\pmat{ #1 \\ #2 \\ #3 }}
+\newcommand{\xyzwpoint}[4]{\pmat{ #1 \\ #2 \\ #3 \\ #4 }}
+\newcommand{\xycolmat}[2]{\bmat{ #1 \\ #2 }}
+\newcommand{\xyzcolmat}[3]{\bmat{ #1 \\ #2 \\ #3 }}
+\newcommand{\xyzwcolmat}[4]{\bmat{ #1 \\ #2 \\ #3 \\ #4 }}
+\newcommand{\xyrowmat}[2]{\bmat{ #1 & #2 }}
+\newcommand{\xyzrowmat}[3]{\bmat{ #1 & #2 & #3 }}
+
+\newcommand{\matspace}[2]{\mathcal{M}_{#1, #2}}  % 4330: Vector space of matrices
+\newcommand{\Lmapspace}[2]{\mathcal{L}(#1, #2)}  % 4330: Vector space of linear maps
+\newcommand{\Lopspace}[1]{\mathcal{L}(#1)}  % 4330: Vector space of linear operators
+
+% Partial Derivatives
+\newcommand{\fracp}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\fracpp}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
+\newcommand{\pzpx}{\fracp{z}{x}}
+\newcommand{\pzpy}{\fracp{z}{y}}
+\newcommand{\pypx}{\fracp{y}{x}}
+\newcommand{\pypt}{\fracp{y}{t}}
+\newcommand{\ppzpxx}{\fracpp{z}{x}}
+\newcommand{\ppzpxy}{\frac{\partial^2 z}{\partial x \partial y}}
+\newcommand{\ppzpyy}{\fracpp{z}{y}}
+\newcommand{\ppypxx}{\fracpp{y}{x}}
+\newcommand{\ppyptt}{\fracpp{y}{t}}
+
+% Parentheses, brackets, etc.
+\newcommand{\ignore}[1]{}  % from Charles
+\newcommand{\parens}[1]{\ensuremath{\left( #1 \right)}}
+\newcommand{\bracks}[1]{\ensuremath{\left[ #1 \right]}}
+\newcommand{\braces}[1]{\ensuremath{\left\{ #1 \right\}}}
+\newcommand{\angbrs}[1]{\ensuremath{\langle #1 \rangle}}
+\newcommand{\set}[1]{\braces{#1}}
+\newcommand{\powset}[1]{\mathcal{P}\parens{#1}}
+\newcommand{\vspan}[1]{\angbrs{#1}}  % 4330: Span of a set of vectors
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\verts}[1]{\left\lvert #1 \right\rvert} % | #1 |
+\newcommand{\Verts}[1]{\left\lVert #1 \right\rVert} % || #1 ||
+\newcommand{\abs}[1]{\verts{#1}}
+\newcommand{\size}[1]{\verts{#1}}
+\newcommand{\norm}[1]{\Verts{#1}}
+
+% Automatic resizing for trig functions (similar to physics package)
+\newcommand{\sinp}[1]{\sin \parens{#1}}
+\newcommand{\cosp}[1]{\cos \parens{#1}}
+\newcommand{\tanp}[1]{\tan \parens{#1}}
+\newcommand{\cotp}[1]{\cot \parens{#1}}
+\newcommand{\secp}[1]{\sec \parens{#1}}
+\newcommand{\cscp}[1]{\csc \parens{#1}}
+
+\newcommand{\logp}[1]{\log \parens{#1}}
+
+\renewcommand{\implies}{\Rightarrow}
+\renewcommand{\iff}{\Leftrightarrow}
+
+% Collaborator statement
+\newcommand{\collab}[1]{I discussed this problem set with #1.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% CS 4820 Title
+
+\newcommand{\mymaketitle}[2]{
+  \setlength\parindent{0in}
+  \addtolength\parskip{1ex}
+  \setlength\fboxrule{.5mm}\setlength{\fboxsep}{1.2mm}
+  \newlength\courseheader
+  \setlength\courseheader\textwidth
+  \addtolength\courseheader{-4mm}
+  \begin{center}
+    \framebox{\parbox\courseheader{\large
+        Introduction to Analysis of Algorithms\hfill #1  \\
+        CS4820/5820 Fall 2022 \hfill #2\hfill}}
+  \end{center}
+}
